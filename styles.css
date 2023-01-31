@@ -5,6 +5,7 @@
 }
 
 #canvas {
+    margin-top: 100px;
     max-width: 500px;
     max-width: 500px;
    display: grid;
@@ -12,6 +13,6 @@
    border: 1px solid black;
 }
 
-.box {
-    
+.black {
+    background-color: black;
 }
