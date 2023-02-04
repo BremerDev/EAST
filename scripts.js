@@ -7,7 +7,6 @@ box.style.height = "25px";
 box.className = "pixel";
 
 canvas.appendChild(box);
-console.log(i);
   }
 
 // Grab all elements with the class name of pixel
@@ -27,19 +26,34 @@ const gridButton = document.getElementById("newGrid");
 
 // add an on click fuction to button
 gridButton.addEventListener('click', function() {
+    
     let gridSize =  prompt("Create a new grid between 1 - 100.");
+
     if (isNaN(gridSize)) {
         gridSize = prompt("Please choose a number between 1 - 100.");
     } else if (gridSize > 100 || gridSize < 1) {
             gridSize = prompt("Please choose a number between 1 - 100.");
-            console.log(gridSize);
-    } else {
+    } else if (gridSize <= 100 && gridSize >= 1) {
+         console.log("This option should output the new grid.")
+         // Take input from gridSize and spit out new divs onto canvas
 
-    }
+         for (let i = gridSize; i < gridSize.length; i++) {
+            let gridSquare = document.createElement("div");
+            console.log(gridSquare);
+            canvas = document.getElementById("canvas");
+            gridSquare.style.width = "25px";
+            gridSquare.style.height = "25px";
+            gridSquare.className = "pixel";
+            console.log(gridSquare);
+            canvas.appendChild(box);
+              };
+
+
+    } else {
+        console.log('else');
+    };
     
 }, false);
 
-
-//input cannot exceed 100 or letters, only numbers.
 
 
