@@ -1,13 +1,13 @@
 
+
 for (let i = 0; i < 256; i++) {
 let box = document.createElement("div");
 canvas = document.getElementById("canvas");
-box.style.width = "25px";
-box.style.height = "25px";
+box.style.width = "1rem";
+box.style.height = "1rem";
 box.className = "pixel";
-
 canvas.appendChild(box);
-  }
+  };
 
 // Grab all elements with the class name of pixel
 let getPixelClass = document.getElementsByClassName('pixel');
@@ -29,28 +29,32 @@ gridButton.addEventListener('click', function() {
     
     let gridSize =  prompt("Create a new grid between 1 - 100.");
 
+    //clear old grid
+    while (canvas.hasChildNodes()) {
+        canvas.removeChild(canvas.firstChild);
+      }
+
+    //figure out why new grid won't append.
+
     if (isNaN(gridSize)) {
         gridSize = prompt("Please choose a number between 1 - 100.");
     } else if (gridSize > 100 || gridSize < 1) {
             gridSize = prompt("Please choose a number between 1 - 100.");
     } else if (gridSize <= 100 && gridSize >= 1) {
-         console.log("This option should output the new grid.")
          // Take input from gridSize and spit out new divs onto canvas
-
-         for (let i = gridSize; i < gridSize.length; i++) {
-            let gridSquare = document.createElement("div");
-            console.log(gridSquare);
-            canvas = document.getElementById("canvas");
-            gridSquare.style.width = "25px";
-            gridSquare.style.height = "25px";
+         let gridSquare = document.createElement("div");
+         canvas = document.getElementById("canvas");
+         for (let i = 0; i < gridSize.length * 2; i++) {
+            gridSquare.style.width = "1rem";
+            gridSquare.style.height = "1rem";
             gridSquare.className = "pixel";
             console.log(gridSquare);
-            canvas.appendChild(box);
+            canvas.appendChild(gridSquare);
               };
 
 
     } else {
-        console.log('else');
+        console.log("It's not workikng.");
     };
     
 }, false);
