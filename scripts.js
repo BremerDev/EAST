@@ -72,28 +72,24 @@ rand.addEventListener('click', function() {
     } else if (gridSize > 100 || gridSize < 1) {
             gridSize = prompt("Please choose a number between 1 - 100.");
     } else if (gridSize <= 100 && gridSize >= 1) {
-        makeRows(gridSize, gridSize);
-        
-            
-            let getPixelClass = document.getElementsByClassName('pixel');
+      makeRows(gridSize, gridSize);
 
-            let pixelArray = Array.from(getPixelClass);
-        
-            // random colour generator
-            
-               
-            
-            //Loop through array with mouse over event listener
-            for (let i = 0; i < pixelArray.length; i++) {
-                pixelArray[i].addEventListener("mouseover", function() {
-                    let r = Math.floor(Math.random()*256);
-                    let g = Math.floor(Math.random()*256);
-                    let b = Math.floor(Math.random()*256);
-                    let colour = "rgb(" + r + "," + g + "," + b + ")";
-                  pixelArray[i].style.setProperty('background-color', colour);
-                })};
-            
-        
+      let getPixelClass = document.getElementsByClassName("pixel");
+
+      let pixelArray = Array.from(getPixelClass);
+
+      // random colour generator
+
+      //Loop through array with mouse over event listener
+      for (let i = 0; i < pixelArray.length; i++) {
+        pixelArray[i].addEventListener("mouseover", function () {
+          let r = Math.floor(Math.random() * 256);
+          let g = Math.floor(Math.random() * 256);
+          let b = Math.floor(Math.random() * 256);
+          let colour = "rgb(" + r + "," + g + "," + b + ")";
+          pixelArray[i].style.setProperty("background-color", colour);
+        });
+      }
     } else {
         console.log("It's not working.");
     };
