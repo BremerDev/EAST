@@ -10,9 +10,6 @@
     grid-template-columns: repeat(var(--grid-cols), 1fr);
   }
   
-
-
-
 .container {
     display: flex;
     justify-content: center;
@@ -36,4 +33,11 @@
 #newGrid {
     margin-top: 20px;
 }
+
+#randColour {
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+
 
