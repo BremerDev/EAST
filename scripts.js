@@ -39,8 +39,10 @@ gridButton.addEventListener('click', function() {
 
     let gridSize =  prompt("Create a new grid between 1 - 100.");
 
-    //account for clicking cancel button
-    if (isNaN(gridSize)) {
+    if (gridSize === null) {
+        alert('Cancelled');
+        location.reload();
+    } else if (isNaN(gridSize)) {
         gridSize = prompt("Please choose a number between 1 - 100.");
     } else if (gridSize > 100 || gridSize < 1) {
             gridSize = prompt("Please choose a number between 1 - 100.");
@@ -66,11 +68,13 @@ rand.addEventListener('click', function() {
 
     let gridSize =  prompt("Create a new grid between 1 - 100.");
 
-    //account for clicking cancel button
-    if (isNaN(gridSize)) {
+     if (gridSize === null) {
+        alert('Cancelled');
+        location.reload();
+    } else if (isNaN(gridSize)) {
         gridSize = prompt("Please choose a number between 1 - 100.");
     } else if (gridSize > 100 || gridSize < 1) {
-            gridSize = prompt("Please choose a number between 1 - 100.");
+        gridSize = prompt("Please choose a number between 1 - 100.");
     } else if (gridSize <= 100 && gridSize >= 1) {
       makeRows(gridSize, gridSize);
 
@@ -97,7 +101,7 @@ rand.addEventListener('click', function() {
 }, false);
 
 
-
+//Something to comr back to.
 // Then try having each pass just add another 10% of black to it so that only after 
 // 10 passes is the square completely black.
 
